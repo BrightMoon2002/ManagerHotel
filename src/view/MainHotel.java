@@ -8,6 +8,8 @@ import sun.util.calendar.BaseCalendar;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class MainHotel {
@@ -18,17 +20,6 @@ public class MainHotel {
         ManagerHotel managerHotel = new ManagerHotel(hotelList);
         managerHotel.menuHotel();
         managerHotel.showAllList();
-
-
-//        LocalDate present = LocalDate.now();
-//        System.out.println(present);
-//        LocalDate dayCheckin = LocalDate.of(2002, 12, 3);
-//        System.out.println(present.compareTo(dayCheckin));
-
-//        Date present = new Date();
-//        System.out.println(present);
-//        Date inputDay = new Date(2002,12,12);
-//        System.out.println(inputDay);
 
 
 

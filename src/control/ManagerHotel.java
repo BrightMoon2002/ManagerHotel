@@ -47,10 +47,10 @@ public class ManagerHotel {
         System.out.println("Enter the day Guest check in:");
         System.out.println("Enter the year of guest check in:");
         Scanner inputYear = new Scanner(System.in);
-        int yearCheckin = inputYear.nextInt();
+        int yearCheckin = inputYear.nextInt() - 1900;
         System.out.println("Enter the month of guest check in:");
         Scanner inputMonth = new Scanner(System.in);
-        int monthCheckin = inputMonth.nextInt();
+        int monthCheckin = inputMonth.nextInt() - 1;
         System.out.println("Enter the day of guest check in:");
         Scanner inputDay = new Scanner(System.in);
         int dayCheckin = inputDay.nextInt();
