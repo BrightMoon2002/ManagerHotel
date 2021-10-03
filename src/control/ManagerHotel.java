@@ -96,26 +96,14 @@ public class ManagerHotel {
                     addNewGuest(creatNewGuest());
                     break;
                 case 2:
-                    System.out.println("Enter the index Guest who you want to edit");
-                    Scanner inputIndex = new Scanner(System.in);
-                    int index = inputIndex.nextInt();
-                    editGuest(index, creatNewGuest());
+                    caseEdit();
                     break;
                 case 3:
-                    System.out.println("Enter the index Guest who you want to remove:");
-                    Scanner inputIndex2 = new Scanner(System.in);
-                    int index2 = inputIndex2.nextInt();
-                    removeGuest(index2);
+                    caseRemove();
                     break;
                 case 4:
-                    System.out.println("Enter the identity Of Guest");
-                    Scanner inputIdentity = new Scanner(System.in);
-                    String identity = inputIdentity.nextLine();
-                    if (checkIdentityCard(identity) == -1) {
-                        System.out.println("No Guest has this identity");
-                    } else {
-                        System.out.println("This fee of guest: " + ((Guest) (managerHotel.get(checkIdentityCard(identity)))).getName() + " is: " + checkFee(identity));
-                    }
+                    caseFee();
+                    break;
                 case 5:
                     showAllList();
                     break;
@@ -126,6 +114,31 @@ public class ManagerHotel {
             }
         }
 
+    }
+
+    private void caseFee() {
+        System.out.println("Enter the identity Of Guest");
+        Scanner inputIdentity = new Scanner(System.in);
+        String identity = inputIdentity.nextLine();
+        if (checkIdentityCard(identity) == -1) {
+            System.out.println("No Guest has this identity");
+        } else {
+            System.out.println("This fee of guest: " + ((Guest) (managerHotel.get(checkIdentityCard(identity)))).getName() + " is: " + checkFee(identity));
+        }
+    }
+
+    private void caseRemove() {
+        System.out.println("Enter the index Guest who you want to remove:");
+        Scanner inputIndex2 = new Scanner(System.in);
+        int index2 = inputIndex2.nextInt();
+        removeGuest(index2);
+    }
+
+    private void caseEdit() {
+        System.out.println("Enter the index Guest who you want to edit");
+        Scanner inputIndex = new Scanner(System.in);
+        int index = inputIndex.nextInt();
+        editGuest(index, creatNewGuest());
     }
 
     public void showAllList() {

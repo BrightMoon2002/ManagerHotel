@@ -14,7 +14,6 @@ public class MainHotel {
         ManagerHotel managerHotel = new ManagerHotel(hotelList);
         managerHotel.menuHotel();
         managerHotel.showAllList();
-
     }
 }
 
