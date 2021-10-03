@@ -1,15 +1,10 @@
 package view;
 
 import control.ManagerHotel;
-import model.Guest;
 import model.Hotel;
-import sun.util.calendar.BaseCalendar;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
+
 
 
 public class MainHotel {
@@ -21,10 +16,6 @@ public class MainHotel {
         managerHotel.menuHotel();
         managerHotel.showAllList();
 
-
-
     }
-
-
 }
 

@@ -3,14 +3,15 @@ package control;
 import model.Guest;
 import model.Hotel;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
+
 import java.util.Date;
 import java.util.Scanner;
 
 public class ManagerHotel {
+    public static final int YEARMINIMUS = 1900;
+    public static final int MONTHMINIMUS = 1;
     private ArrayList<Hotel> managerHotel = new ArrayList<>();
 
     public ManagerHotel(ArrayList<Hotel> managerHotel) {
@@ -47,10 +48,10 @@ public class ManagerHotel {
         System.out.println("Enter the day Guest check in:");
         System.out.println("Enter the year of guest check in:");
         Scanner inputYear = new Scanner(System.in);
-        int yearCheckin = inputYear.nextInt() - 1900;
+        int yearCheckin = inputYear.nextInt() - YEARMINIMUS;
         System.out.println("Enter the month of guest check in:");
         Scanner inputMonth = new Scanner(System.in);
-        int monthCheckin = inputMonth.nextInt() - 1;
+        int monthCheckin = inputMonth.nextInt() - MONTHMINIMUS;
         System.out.println("Enter the day of guest check in:");
         Scanner inputDay = new Scanner(System.in);
         int dayCheckin = inputDay.nextInt();
