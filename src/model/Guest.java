@@ -3,7 +3,7 @@ package model;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Guest extends Hotel{
+public class Guest extends Hotel {
     private String name;
     private LocalDate birthday;
     private String identityCard;

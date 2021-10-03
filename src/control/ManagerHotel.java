@@ -29,6 +29,7 @@ public class ManagerHotel {
     public void editGuest(int index, Hotel newGuest) {
         managerHotel.set(index, newGuest);
     }
+
     public int checkIdentityCard(String identityCard) {
         int index = -1;
         for (int i = 0; i < managerHotel.size(); i++) {
@@ -41,10 +42,10 @@ public class ManagerHotel {
     }
 
     public double checkFee(String identityCard) {
-           return managerHotel.get(checkIdentityCard(identityCard)).getFeeHotel();
+        return managerHotel.get(checkIdentityCard(identityCard)).getFeeHotel();
     }
 
-    public Hotel creatNewGuest () {
+    public Hotel creatNewGuest() {
         System.out.println("Enter the day Guest check in:");
         System.out.println("Enter the year of guest check in:");
         Scanner inputYear = new Scanner(System.in);
@@ -113,7 +114,7 @@ public class ManagerHotel {
                     if (checkIdentityCard(identity) == -1) {
                         System.out.println("No Guest has this identity");
                     } else {
-                        System.out.println("This fee of guest: " + ((Guest)(managerHotel.get(checkIdentityCard(identity)))).getName() + " is: " + checkFee(identity));
+                        System.out.println("This fee of guest: " + ((Guest) (managerHotel.get(checkIdentityCard(identity)))).getName() + " is: " + checkFee(identity));
                     }
                 case 5:
                     showAllList();
@@ -128,8 +129,8 @@ public class ManagerHotel {
     }
 
     public void showAllList() {
-        for (Hotel hotel: managerHotel
-             ) {
+        for (Hotel hotel : managerHotel
+        ) {
             System.out.println(hotel);
         }
     }

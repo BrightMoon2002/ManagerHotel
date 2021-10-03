@@ -3,6 +3,9 @@ package model;
 import java.util.Date;
 
 public class Hotel {
+    public static final String TYPEA = "A";
+    public static final String TYPEB = "B";
+    public static final String TYPEC = "C";
     private Date day;
     private String kind;
     private double price;
@@ -34,29 +37,29 @@ public class Hotel {
     }
 
     public double getPrice() {
-       switch (getKind().toUpperCase()) {
-           case "A":
-               price = 400;
-               break;
-           case "B":
-               price = 300;
-               break;
-           case "C":
-               price = 200;
-               break;
-           default:
-               price = 100;
-               break;
-       }
-            return price;
+        switch (getKind().toUpperCase()) {
+            case TYPEA:
+                price = 400;
+                break;
+            case TYPEB:
+                price = 300;
+                break;
+            case TYPEC:
+                price = 200;
+                break;
+            default:
+                price = 100;
+                break;
+        }
+        return price;
     }
 
     public double setPrice(double price1, double price2, double price3) {
-        if (getKind() == "A") {
+        if (getKind() == TYPEA) {
             this.price = price1;
-        } else if (getKind() == "B") {
+        } else if (getKind() == TYPEB) {
             this.price = price2;
-        } else if (getKind() == "C") {
+        } else if (getKind() == TYPEC) {
             this.price = price3;
         }
         return price;
@@ -66,9 +69,9 @@ public class Hotel {
         Date presentDay = new Date();
         Date dayCheckin = getDay();
         long day = presentDay.getTime() - dayCheckin.getTime();
-        long a = day/(24*60*60*1000);
+        long a = day / (24 * 60 * 60 * 1000);
         return a * getPrice();
-        }
+    }
 
     @Override
     public String toString() {
