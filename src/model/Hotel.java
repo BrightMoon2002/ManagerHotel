@@ -14,10 +14,6 @@ public class Hotel {
     public Hotel(Date day, String kind) {
         this.day = day;
         this.kind = kind;
-        this.price = price;
-    }
-
-    public Hotel(String kind, Date day, double price) {
     }
 
     public Date getDay() {
@@ -55,12 +51,16 @@ public class Hotel {
     }
 
     public double setPrice(double price1, double price2, double price3) {
-        if (getKind() == TYPEA) {
-            this.price = price1;
-        } else if (getKind() == TYPEB) {
-            this.price = price2;
-        } else if (getKind() == TYPEC) {
-            this.price = price3;
+        switch (getKind()) {
+            case TYPEA:
+                this.price = price1;
+                break;
+            case TYPEB:
+                this.price = price2;
+                break;
+            case TYPEC:
+                this.price = price3;
+                break;
         }
         return price;
     }
