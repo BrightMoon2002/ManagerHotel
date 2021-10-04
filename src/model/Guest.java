@@ -8,14 +8,14 @@ public class Guest extends Hotel {
     private LocalDate birthday;
     private String identityCard;
 
-    public Guest(Date day, String kind, String name, String identityCard) {
+    public Guest(LocalDate day, String kind, String name, String identityCard) {
         super(day, kind);
         this.name = name;
         this.identityCard = identityCard;
     }
 
 
-    public Guest(Date day, String kind, String name, LocalDate birthday, String identityCard) {
+    public Guest(LocalDate day, String kind, String name, LocalDate birthday, String identityCard) {
         super(day, kind);
         this.name = name;
         this.birthday = birthday;

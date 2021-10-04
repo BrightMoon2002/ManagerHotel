@@ -10,8 +10,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class ManagerHotel {
-    public static final int YEARMINIMUS = 1900;
-    public static final int MONTHMINIMUS = 1;
+
     private ArrayList<Hotel> managerHotel = new ArrayList<>();
 
     public ManagerHotel(ArrayList<Hotel> managerHotel) {
@@ -49,14 +48,14 @@ public class ManagerHotel {
         System.out.println("Enter the day Guest check in:");
         System.out.println("Enter the year of guest check in:");
         Scanner inputYear = new Scanner(System.in);
-        int yearCheckin = inputYear.nextInt() - YEARMINIMUS;
+        int yearCheckin = inputYear.nextInt();
         System.out.println("Enter the month of guest check in:");
         Scanner inputMonth = new Scanner(System.in);
-        int monthCheckin = inputMonth.nextInt() - MONTHMINIMUS;
+        int monthCheckin = inputMonth.nextInt();
         System.out.println("Enter the day of guest check in:");
         Scanner inputDay = new Scanner(System.in);
         int dayCheckin = inputDay.nextInt();
-        Date day = new Date(yearCheckin, monthCheckin, dayCheckin);
+       LocalDate day = LocalDate.of(yearCheckin, monthCheckin, dayCheckin);
         System.out.println("Enter the kind:");
         Scanner inputKind = new Scanner(System.in);
         String kind = inputKind.nextLine();

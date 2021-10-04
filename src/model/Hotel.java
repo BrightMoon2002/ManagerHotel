@@ -1,26 +1,29 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.Date;
+
+import static java.time.temporal.ChronoUnit.DAYS;
 
 public class Hotel {
     public static final String TYPEA = "A";
     public static final String TYPEB = "B";
     public static final String TYPEC = "C";
-    private Date day;
+    private LocalDate day;
     private String kind;
     private double price;
 
 
-    public Hotel(Date day, String kind) {
+    public Hotel(LocalDate day, String kind) {
         this.day = day;
         this.kind = kind;
     }
 
-    public Date getDay() {
+    public LocalDate getDay() {
         return day;
     }
 
-    public void setDay(Date day) {
+    public void setDay(LocalDate day) {
         this.day = day;
     }
 
@@ -66,9 +69,9 @@ public class Hotel {
     }
 
     public double getFeeHotel() {
-        Date presentDay = new Date();
-        Date dayCheckin = getDay();
-        long day = presentDay.getTime() - dayCheckin.getTime();
+        LocalDate presentDay = LocalDate.now();
+        LocalDate dayCheckin = getDay();
+        long day = DAYS.between(dayCheckin, presentDay);
         long a = day / (24 * 60 * 60 * 1000);
         return a * getPrice();
     }
